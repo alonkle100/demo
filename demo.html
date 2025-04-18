@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script>
+        function loadImage() {
+            const img = document.createElement('img');
+            img.onerror = function() {
+                img.src = 'https://main.34.69.119.173.sslip.io/fallback-image.jpg';
+            };
+            const randomString = Math.random().toString(36).substring(2, 7);
+            img.src = `https://${randomString}.34.69.119.173.sslip.io/image.jpg`;
+            document.body.appendChild(img);
+        }
+        window.onload = loadImage;
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Demo Page</h1>
+    <img id="dynamicImage" alt="Dynamic Image" />
+</body>
+</html> 
