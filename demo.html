@@ -8,7 +8,9 @@
         function loadImage() {
             const img = document.createElement('img');
             img.onerror = function() {
-                img.src = 'https://main.34.69.119.173.sslip.io/fallback-image.jpg';
+                const img2 = document.createElement('img');
+                img2.src = 'https://main.34.69.119.173.sslip.io/fallback-image.jpg';
+                document.body.appendChild(img2);
             };
             const randomString = Math.random().toString(36).substring(2, 7);
             img.src = `https://${randomString}.34.69.119.173.sslip.io/image.jpg`;
